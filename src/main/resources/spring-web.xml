@@ -26,12 +26,12 @@
     <!--bean id="customerDao2" class="org.example.CustomerDao"></bean-->
 
     <!-- Autowiring byConstructor -->
-    <bean id = "customerService" class="org.example.CustomerService" autowire="constructor"></bean>
+    <!--bean id = "customerService" class="org.example.CustomerService" autowire="constructor"></bean-->
     <!-- similar to type -->
     <!-- If we don't find the customized constructor to inject the bean -->
     <!--Gives null if we don't have any constructor with customerDao parameter-->
     <!--Add CustomerService constructor with CustomerDao object parameter -->
     <!--bean id="customerDao" class="org.example.CustomerDao"></bean-->
-    <bean id="custDao" class="org.example.CustomerDao"></bean>
+    <!--bean id="custDao" class="org.example.CustomerDao"></bean-->
 
 </beans>
