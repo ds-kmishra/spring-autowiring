@@ -11,6 +11,5 @@ public class AppMain {
         CustomerService customerService = context.getBean("customerService", CustomerService.class);
         System.out.println(customerService.getCustomerDao());
 
-
     }
 }
