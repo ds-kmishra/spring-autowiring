@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Autowiring byName -->
+    <!-- Injecting CustomerDao by setter methods -->
+    <!-- org.example.CustomerService class must have default constructor -->
+    <!--bean id = "customerService" class="org.example.CustomerService" autowire="byName"></bean-->
+
+    <!-- It will try to call the set method in Bean Factory and is going to use setter method to set the value
+    so use set method setCustomerDao to set the value -->
+    <!--bean id="customerDao" class="org.example.CustomerDao"></bean-->
+    <!-- Will get null as customerDao1 setter method doesn't exist-->
+    <!--bean id="customerDao1" class="org.example.CustomerDao"></bean-->
+
+    <!-- Autowiring byType -->
+    <!--bean id = "customerService" class="org.example.CustomerService" autowire="byType"></bean-->
+    <!-- It checks the class name  -->
+
+    <!--bean id="customerDao1" class="org.example.CustomerDao"></bean-->
+    <!-- NoUniqueBeanDefinitionException: But if it has more than one bean of the same type we may get error -->
+    <!--No qualifying bean of type 'org.example.CustomerDao' available: expected single matching bean
+    but found 2: customerDao1,customerDao2-->
+    <!--bean id="customerDao2" class="org.example.CustomerDao"></bean-->
+
+    <!-- Autowiring byConstructor -->
+    <bean id = "customerService" class="org.example.CustomerService" autowire="constructor"></bean>
+    <!-- similar to type -->
+    <!-- If we don't find the customized constructor to inject the bean -->
+    <!--Gives null if we don't have any constructor with customerDao parameter-->
+    <!--Add CustomerService constructor with CustomerDao object parameter -->
+    <!--bean id="customerDao" class="org.example.CustomerDao"></bean-->
+    <bean id="custDao" class="org.example.CustomerDao"></bean>
+
+</beans>
